@@ -11,7 +11,7 @@ fetch(apiUrl)
 .then(dados => {
     noticias_section = document.getElementById("sbv");
     console.log(dados);
-    const ultimas_noticias = dados.items.map(item => `<article><a href="${item.link}" target="_blank"><h6>${item.title}</h6></a><img src="${item.thumbnail}"/></article>`).join('');
+    const ultimas_noticias = dados.items.map(item => `<article><a href="${item.link}" target="_blank"><h4>${item.title}</h4></a><br><img src="${item.thumbnail}"/><br><p>${item.description}</p></article>`).join('');
     noticias_section.innerHTML = ultimas_noticias;
 })
 .catch(error => console.log(error.message))
@@ -19,5 +19,5 @@ fetch(apiUrl)
 
 
 // comente a proxima linha para tirar o atraso no carregamento das noticias
-}, 5000);
+}, 2500);
 
